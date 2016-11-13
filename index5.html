@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+
+    <title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+    function success(position) {
+        alert(position)
+    }
+
+    function err (error) {
+        switch(error.code){
+            case 0:
+                alert("获取位置信息出错！");
+                break;
+            case 1:
+                alert("您设置了阻止该页面获取位置信息！");
+                break;
+            case 2:
+                alert("浏览器无法确定您的位置！");
+                break;
+            case 3:
+                alert("获取位置信息超时！");
+                break;
+        }
+    }
+    var opts = {
+        enableHighAccuracy: true,
+        timeout: 3000,
+        maximumAge: 50
+    }
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(success, err, opts);
+    }else {
+        alert("Your browser does not support Geolocation!");
+    }
+
+
+</script>
+</body>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=2.0&ak=YhbWyYbk2GNDnATCLxCusidiw2WeWg7p">
+    </script>
+
+    <title>Title</title>
+</head>
+<body>
+j地图页面
+<div id="info">
+
+</div>
+<script>
+    var info = document.getElementById("info");
+    var point = JSON.parse(localStorage.getItem("point"));
+    info.innerHTML = point.lat;
+
+</script>
+</body>
+</html>
